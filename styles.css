@@ -1,31 +1,16 @@
 /* Design System Colors */
 :root {
   /* Primary Colors */
-  --spring-wood: #f5f5dc;
-  --white-20: rgba(255, 255, 255, 0.2);
-  --white-90: rgba(255, 255, 255, 0.9);
-  --white-95: rgba(255, 255, 255, 0.95);
-  --white-70: rgba(255, 255, 255, 0.7);
-  --white-30: rgba(255, 255, 255, 0.3);
-  --white-10: rgba(255, 255, 255, 0.1);
-  --white-2: rgba(255, 255, 255, 0.02);
-  --athens-gray: #f5f5f5;
-  --black-30: rgba(0, 0, 0, 0.3);
   --cod-gray: #1a1a1a;
-  --old-gold: #d4af37;
   --pampas: #f7f3f0;
-  --pickled-bluewood: #2c3e50;
-  --regent-gray: #83878a;
-  --tapa: #7a6a53;
-  --gamboge: #e49b0f;
-
-  /* Secondary Colors */
-  --black: #000000;
-  --congress-blue: #003f7f;
-  --mongoose: #b5a584;
   --white: #ffffff;
   --white-black: #f8f8f8;
-  --blue-zodiac: #0f2a44;
+  --athens-gray: #f5f5f5;
+  --black-30: rgba(0, 0, 0, 0.3);
+
+  /* Secondary Colors */
+  --congress-blue: #003f7f;
+  --mongoose: #b5a584;
   --claret: #7d1538;
   --dove-gray: #6d6d6d;
   --gray-chateau: #a2a2a2;
@@ -34,7 +19,6 @@
   --oxford-blue: #384b70;
   --pale-sky: #6e7b8b;
   --ripe-lemon: #f4d03f;
-  --white-spring-wood: #f9f7f4;
   --westar: #ddd6ce;
   --ebony-clay: #323c47;
 
@@ -105,7 +89,7 @@ p {
   position: fixed;
   top: 0;
   width: 100%;
-  background: var(--white-95);
+  background: var(--white);
   backdrop-filter: blur(10px);
   padding: 1rem 2rem;
   z-index: 1000;
