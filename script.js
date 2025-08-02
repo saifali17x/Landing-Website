@@ -267,19 +267,10 @@ function initializeAnimations() {
       });
     }, observerOptions);
 
-    const animatedElements = document.querySelectorAll(`
-            .social-card, 
-            .creative-card, 
-            .value-item, 
-            .feature,
-            .hero-text,
-            .hero-image,
-            .about-images,
-            .about-text,
-            .capsule-image,
-            .capsule-text,
-            .newsletter-content
-        `);
+    // FIX: Use a single-line string for the selector
+    const animatedElements = document.querySelectorAll(
+      ".social-card, .creative-card, .value-item, .feature, .hero-text, .hero-image, .about-images, .about-text, .capsule-image, .capsule-text, .newsletter-content"
+    );
 
     animatedElements.forEach((el, index) => {
       if (el) {
