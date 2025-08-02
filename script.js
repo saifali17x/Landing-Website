@@ -193,7 +193,7 @@ function handleNewsletterForm(form) {
 function handleResumeDownload() {
   try {
     const link = document.createElement("a");
-    link.href = "/assets/resume.pdf";
+    link.href = "./resume.pdf";
     link.download = "Saif_Ali_Resume.pdf";
     document.body.appendChild(link);
     link.click();
