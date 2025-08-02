@@ -267,20 +267,13 @@ function initializeAnimations() {
       });
     }, observerOptions);
 
-    // FIX: Use a single-line string for the selector
     const animatedElements = document.querySelectorAll(
       ".social-card, .creative-card, .value-item, .feature, .hero-text, .hero-image, .about-images, .about-text, .capsule-image, .capsule-text, .newsletter-content"
     );
 
-    animatedElements.forEach((el, index) => {
-      if (el) {
-        el.style.opacity = "0";
-        el.style.transform = "translateY(30px)";
-        el.style.transition = `opacity 0.6s ease ${
-          index * 0.1
-        }s, transform 0.6s ease ${index * 0.1}s`;
-        observer.observe(el);
-      }
+    animatedElements.forEach((el) => {
+      el.classList.add("animate-init");
+      observer.observe(el);
     });
   } catch (error) {}
 }
