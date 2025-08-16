@@ -2,6 +2,8 @@
 document.addEventListener("DOMContentLoaded", function () {
   // Initialize all critical functionality
   initializeNavigation();
+  initializeMobileMenu();
+  initializeThemeToggle();
   initializeScrollEffects();
   initializeForms();
   initializeAnimations();
@@ -35,11 +37,135 @@ function initializeNavigation() {
             behavior: "smooth",
             block: "start",
           });
+
+          // Close mobile menu when link is clicked
+          const navLinksContainer = document.querySelector(".nav-links");
+          const mobileToggle = document.querySelector(".mobile-menu-toggle");
+          if (navLinksContainer && mobileToggle) {
+            navLinksContainer.classList.remove("active");
+            mobileToggle.classList.remove("active");
+            document.body.style.overflow = "";
+          }
         }
       });
     });
   } catch (error) {
     // Optionally log error
+  }
+}
+
+// Mobile menu functionality
+function initializeMobileMenu() {
+  try {
+    const mobileToggle = document.querySelector(".mobile-menu-toggle");
+    const navLinks = document.querySelector(".nav-links");
+
+    if (!mobileToggle || !navLinks) return;
+
+    // Handle click and keyboard events for mobile toggle
+    const toggleMenu = function () {
+      mobileToggle.classList.toggle("active");
+      navLinks.classList.toggle("active");
+
+      // Prevent body scroll when menu is open
+      if (navLinks.classList.contains("active")) {
+        document.body.style.overflow = "hidden";
+        // Focus first menu item for accessibility
+        const firstMenuItem = navLinks.querySelector("a");
+        if (firstMenuItem) {
+          setTimeout(() => firstMenuItem.focus(), 100);
+        }
+      } else {
+        document.body.style.overflow = "";
+        // Return focus to toggle button
+        mobileToggle.focus();
+      }
+    };
+
+    mobileToggle.addEventListener("click", toggleMenu);
+
+    // Handle keyboard navigation for mobile toggle
+    mobileToggle.addEventListener("keydown", function (e) {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        toggleMenu();
+      }
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener("click", function (e) {
+      if (!mobileToggle.contains(e.target) && !navLinks.contains(e.target)) {
+        navLinks.classList.remove("active");
+        mobileToggle.classList.remove("active");
+        document.body.style.overflow = "";
+      }
+    });
+
+    // Close menu on window resize
+    window.addEventListener("resize", function () {
+      if (window.innerWidth > 768) {
+        navLinks.classList.remove("active");
+        mobileToggle.classList.remove("active");
+        document.body.style.overflow = "";
+      }
+    });
+  } catch (error) {
+    console.warn("Mobile menu initialization failed:", error);
+  }
+}
+
+// Theme toggle functionality
+function initializeThemeToggle() {
+  try {
+    const themeToggle = document.querySelector(".theme-toggle");
+    if (!themeToggle) return;
+
+    // Check for saved theme preference or default to dark mode
+    const savedTheme = localStorage.getItem("theme") || "dark";
+    document.documentElement.setAttribute("data-theme", savedTheme);
+
+    // Update toggle button state
+    updateThemeToggleState(savedTheme);
+
+    themeToggle.addEventListener("click", function () {
+      const currentTheme = document.documentElement.getAttribute("data-theme");
+      const newTheme = currentTheme === "dark" ? "light" : "dark";
+
+      document.documentElement.setAttribute("data-theme", newTheme);
+      localStorage.setItem("theme", newTheme);
+      updateThemeToggleState(newTheme);
+
+      // Add smooth transition animation
+      document.body.style.transition = "all 0.3s ease";
+      setTimeout(() => {
+        document.body.style.transition = "";
+      }, 300);
+    });
+
+    // Listen for system theme changes
+    if (window.matchMedia) {
+      const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+      mediaQuery.addEventListener("change", function (e) {
+        if (!localStorage.getItem("theme")) {
+          const theme = e.matches ? "dark" : "light";
+          document.documentElement.setAttribute("data-theme", theme);
+          updateThemeToggleState(theme);
+        }
+      });
+    }
+  } catch (error) {
+    console.warn("Theme toggle initialization failed:", error);
+  }
+}
+
+// Update theme toggle button state
+function updateThemeToggleState(theme) {
+  const themeToggle = document.querySelector(".theme-toggle");
+  if (themeToggle) {
+    themeToggle.setAttribute(
+      "aria-label",
+      theme === "dark" ? "Switch to light mode" : "Switch to dark mode"
+    );
   }
 }
 
@@ -52,13 +178,9 @@ function initializeScrollEffects() {
     function handleScroll() {
       const scrolled = window.scrollY;
       if (scrolled > 100) {
-        navbar.style.background = "rgba(255, 255, 255, 0.98)";
-        navbar.style.boxShadow = "0 2px 20px rgba(0,0,0,0.1)";
-        navbar.style.backdropFilter = "blur(20px)";
+        navbar.classList.add("scrolled");
       } else {
-        navbar.style.background = "rgba(255, 255, 255, 0.95)";
-        navbar.style.boxShadow = "none";
-        navbar.style.backdropFilter = "blur(10px)";
+        navbar.classList.remove("scrolled");
       }
     }
 

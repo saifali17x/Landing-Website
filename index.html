@@ -7,8 +7,7 @@
     <title>Saif Ali - Web Developer</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -25,6 +24,17 @@
             <li><a href="#values">Values</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
+        <div class="nav-controls">
+            <button class="theme-toggle" aria-label="Toggle dark mode">
+                <span class="sun-icon">☀️</span>
+                <span class="moon-icon">🌙</span>
+            </button>
+            <div class="mobile-menu-toggle" aria-label="Toggle mobile menu" role="button" tabindex="0">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
     </nav>
 
     <!-- Hero Section -->
@@ -32,7 +42,7 @@
         <div class="hero-content">
             <div class="hero-text">
                 <h1>Hey, I am <span class="highlight">Saif</span></h1>
-                <p>Aspiring Computer Science student and Web Developer</p>
+                <p>Full Stack Developer who develops secure, scalable, and efficient web applications.</p>
                 <button class="cta-button">Download Resume</button>
             </div>
             <div class="hero-image">
@@ -77,63 +87,73 @@
                         onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=250&h=350&fit=crop&crop=face'">
                 </div>
                 <div class="about-image small-image top">
-                    <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=200&h=150&fit=crop"
-                        alt="Working on projects">
+                    <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=200&h=150&fit=crop"
+                        alt="Coding workspace" loading="lazy">
                 </div>
                 <div class="about-image small-image bottom">
-                    <img src="https://images.unsplash.com/photo-1516714819001-8ee7a13b71d7?w=200&h=150&fit=crop"
-                        alt="Tech event">
+                    <img src="https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=200&h=150&fit=crop"
+                        alt="Development setup" loading="lazy">
                 </div>
             </div>
             <div class="about-text">
                 <h2>Hey, I'm Saif Ali</h2>
-                <p>I am a passionate and driven Computer Science student studying at UCP who is eager to explore the
-                    world of technology and problem-solving. With a strong foundation in programming, data structures,
-                    and algorithms, I enjoy developing efficient and optimized solutions for real-world challenges.</p>
+                <p><strong>Full-Stack Web Developer | React • Node.js • Express • Next.js • PostgreSQL •
+                        Docker</strong><br />
 
-                <p>My interests include web development and competitive programming. I have worked on projects involving
-                    HTML, CSS, JavaScript and web development, focusing on writing clean and scalable code.</p>
+                    I design and develop secure, scalable, and high-performance web applications from the ground up.
+                    Whether you need a sleek front-end interface, a robust back-end API, or a fully containerized
+                    deployment, I bring the skills to deliver end-to-end solutions.</p>
 
-                <p>Beyond academics, I actively seek opportunities to enhance my skills through internships, hackathons,
-                    and collaborative projects. I am always open to learning new technologies and connecting with
-                    like-minded professionals in the field.</p>
+                <p><strong>What I Can Do for You:</strong></p>
+                <ul>
+                    <li>Build modern React.js or Next.js front-ends with responsive UI/UX</li>
+                    <li>Develop RESTful or GraphQL APIs with Node.js and Express.js</li>
+                    <li>Design & optimize relational databases in PostgreSQL</li>
+                    <li>Implement JWT-based authentication for secure user access</li>
+                    <li>Deploy and containerize applications with Docker for consistency & scalability</li>
+                </ul>
 
-                <p>Let's connect and discuss ideas, projects, and career opportunities in the tech industry!</p>
+                <p><strong>Why Work With Me?</strong></p>
+                <ul>
+                    <li>2+ years of C++ & programming logic experience before moving into full-stack development</li>
+                    <li>Strong focus on clean, maintainable code and long-term project scalability</li>
+                    <li>Excellent communication and timely delivery</li>
+                </ul>
 
-                <p><strong>Welcome to my world.</strong></p>
+                <p>Let’s turn your idea into a powerful, production-ready web application.</p>
             </div>
         </div>
     </section>
 
     <!-- Social Profiles Section -->
     <section class="social-profiles">
-        <h2>Social Profiles</h2>
-        <p>From immigrant dreams to luxury reality - a story of resilience, cultural fusion, and the courage to redefine
-            what luxury means.</p>
+        <h2>Development Journey</h2>
+        <p>Exploring the intersection of technology and creativity - building innovative solutions that make a
+            meaningful impact in the digital world.</p>
 
         <div class="social-grid">
             <div class="social-card">
-                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=300&fit=crop&crop=face"
-                    alt="Professional portrait">
+                <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=300&fit=crop"
+                    alt="Modern developer workspace" loading="lazy">
             </div>
             <div class="social-card orange-bg">
-                <img src="https://images.unsplash.com/photo-1611695434398-4f4b330623e6?w=400&h=300&fit=crop"
-                    alt="Social media content">
+                <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=400&h=300&fit=crop"
+                    alt="Programming and development" loading="lazy">
             </div>
             <div class="social-card">
-                <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=400&h=300&fit=crop"
-                    alt="Behind the scenes">
+                <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=400&h=300&fit=crop"
+                    alt="Web development" loading="lazy">
             </div>
         </div>
 
         <div class="social-grid-bottom">
             <div class="social-card">
-                <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=400&h=300&fit=crop&crop=face"
-                    alt="Studio work">
+                <img src="https://images.unsplash.com/photo-1484417894907-623942c8ee29?w=400&h=300&fit=crop"
+                    alt="Clean coding environment" loading="lazy">
             </div>
             <div class="social-card">
-                <img src="dgawlo1-0eab5e49-299e-4e83-9997-c059b0365eb0.png" alt="Sans from UnderTale"
-                    onerror="this.src='https://images.unsplash.com/photo-1551650975-87deedd944c3?w=400&h=300&fit=crop'">
+                <img src="https://images.unsplash.com/photo-1605379399642-870262d3d051?w=400&h=300&fit=crop"
+                    alt="Development technology" loading="lazy">
             </div>
         </div>
     </section>
@@ -142,8 +162,8 @@
     <section class="capsule-wardrobe">
         <div class="capsule-content">
             <div class="capsule-image">
-                <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500&h=400&fit=crop"
-                    alt="Capsule wardrobe">
+                <img src="https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=500&h=400&fit=crop"
+                    alt="Professional development workspace" loading="lazy">
             </div>
             <div class="capsule-text">
                 <h2>Professional Development</h2>
@@ -181,16 +201,16 @@
 
         <div class="creative-grid">
             <div class="creative-card">
-                <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=300&h=200&fit=crop"
-                    alt="Modern workspace">
+                <img src="https://images.unsplash.com/photo-1522252234503-e356532cafd5?w=300&h=200&fit=crop"
+                    alt="Collaborative development" loading="lazy">
             </div>
             <div class="creative-card">
-                <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=300&h=200&fit=crop"
-                    alt="Creative process">
+                <img src="https://images.unsplash.com/photo-1542831371-29b0f74f9713?w=300&h=200&fit=crop"
+                    alt="Code development" loading="lazy">
             </div>
             <div class="creative-card">
-                <img src="https://images.unsplash.com/photo-1516714819001-8ee7a13b71d7?w=300&h=200&fit=crop"
-                    alt="Traditional craftsmanship">
+                <img src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=300&h=200&fit=crop"
+                    alt="Technology innovation" loading="lazy">
             </div>
         </div>
     </section>
