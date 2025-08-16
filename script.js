@@ -315,7 +315,7 @@ function handleNewsletterForm(form) {
 function handleResumeDownload() {
   try {
     const link = document.createElement("a");
-    link.href = "./resume.pdf";
+    link.href = "./Saif-Ali-Resume.pdf";
     link.download = "Saif_Ali_Resume.pdf";
     document.body.appendChild(link);
     link.click();
